@@ -1,2 +1,9 @@
-<amb-header></amb-header>
-<amb-sidebar></amb-sidebar>
+<mat-sidenav-container>
+  <mat-sidenav [opened]="isOpened" mode="side"></mat-sidenav>
+
+  <mat-sidenav-content>
+    <amb-header (onToggleMenu)="isOpened = !isOpened"></amb-header>
+
+    <router-outlet/>
+  </mat-sidenav-content>
+</mat-sidenav-container>
