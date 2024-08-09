@@ -1,9 +1,15 @@
 <mat-sidenav-container>
-  <mat-sidenav [opened]="isOpened" mode="side"></mat-sidenav>
+  <mat-sidenav [opened]="isOpened" mode="side">
+    <h2>Hi world</h2>
+    <a routerLink="/user">User</a>
+    <a routerLink="/driver">Driver</a>
+    <a routerLink="/medic">Medic</a>
+    <a routerLink="/history">History</a>
+  </mat-sidenav>
 
   <mat-sidenav-content>
     <amb-header (onToggleMenu)="isOpened = !isOpened"></amb-header>
 
-    <router-outlet/>
+    <router-outlet />
   </mat-sidenav-content>
 </mat-sidenav-container>
