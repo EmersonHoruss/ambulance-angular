@@ -10,5 +10,17 @@ export class PageListComponent {
   dataSource = [
     { id: 1, name: 'Carlos', lastname: 'Ojeda', cmp: 123 },
     { id: 2, name: 'Carlos2', lastname: 'Ojeda2', cmp: 223 },
+    { id: 1, name: 'Carlos', lastname: 'Ojeda', cmp: 123 },
+    { id: 2, name: 'Carlos2', lastname: 'Ojeda2', cmp: 223 },
+    { id: 1, name: 'Carlos', lastname: 'Ojeda', cmp: 123 },
+    { id: 2, name: 'Carlos2', lastname: 'Ojeda2', cmp: 223 },
+    { id: 1, name: 'Carlos', lastname: 'Ojeda', cmp: 123 },
+    { id: 2, name: 'Carlos2', lastname: 'Ojeda2', cmp: 223 },
+    { id: 1, name: 'Carlos', lastname: 'Ojeda', cmp: 123 },
+    { id: 2, name: 'Carlos2', lastname: 'Ojeda2', cmp: 223 },
+    { id: 1, name: 'Carlos', lastname: 'Ojeda', cmp: 123 },
+    { id: 2, name: 'Carlos2', lastname: 'Ojeda2', cmp: 223 },
+    { id: 1, name: 'Carlos', lastname: 'Ojeda', cmp: 123 },
+    { id: 2, name: 'Carlos2', lastname: 'Ojeda2', cmp: 223 },
   ];
 }
