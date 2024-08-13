@@ -17,6 +17,7 @@ export class IconService {
     { name: 'driver', path: 'assets/icons/driver.svg' },
     { name: 'history', path: 'assets/icons/history.svg' },
     { name: 'dashboard', path: 'assets/icons/dashboard.svg' },
+    { name: 'logo', path: 'assets/icons/logo.svg' },
   ];
 
   constructor(
@@ -24,7 +25,6 @@ export class IconService {
     private domSanitizer: DomSanitizer
   ) {
     this.listIcons.forEach(({ name, path }) => {
-      console.log("initialized")
       const sanitizedPath =
         this.domSanitizer.bypassSecurityTrustResourceUrl(path);
       this.matIconRegistry.addSvgIcon(name, sanitizedPath);

@@ -3,12 +3,18 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { IconService } from './shared/services/icon.service';
-import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'amb-root',
   standalone: true,
-  imports: [RouterOutlet, CoreModule, MatSidenavModule, RouterLink],
+  imports: [
+    RouterOutlet,
+    CoreModule,
+    MatSidenavModule,
+    RouterLink,
+    MatIconModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
