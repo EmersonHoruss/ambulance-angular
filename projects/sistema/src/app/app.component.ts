@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { IconService } from './shared/services/icon.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'amb-root',
@@ -11,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'sistema';
   isOpened = true;
+
+  constructor(private readonly iconService: IconService) {}
 }
