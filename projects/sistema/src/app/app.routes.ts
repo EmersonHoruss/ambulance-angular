@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
+import { PageLoginComponent } from './core/views/pages/page-login/page-login.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./test/test.component').then((c) => c.TestComponent),
+    component: PageLoginComponent,
   },
   {
     path: 'user',

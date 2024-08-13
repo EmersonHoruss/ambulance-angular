@@ -10,9 +10,11 @@ import { HeaderComponent } from './views/components/header/header.component';
 import { SidebarComponent } from './views/components/sidebar/sidebar.component';
 import { MenuComponent } from './views/components/menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { PageLoginComponent } from './views/pages/page-login/page-login.component';
+import { LoginComponent } from './views/components/login/login.component';
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent, MenuComponent],
+  declarations: [HeaderComponent, SidebarComponent, MenuComponent, PageLoginComponent, LoginComponent],
   imports: [
     CommonModule,
     RouterModule,
