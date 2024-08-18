@@ -116,9 +116,13 @@ export class PageListComponent {
   }
 
   delete(id: number) {
-    const index = this.dataOriginal.findIndex((record) => record.id === id);
-    this.dataOriginal.splice(index, 1);
-    this.getRecordsBypage(this.currentPage);
-    this.quantityRecords = this.dataOriginal.length;
+    this.utilsService.showConfirm().subscribe((response) => {
+      if (!response) return;
+
+      const index = this.dataOriginal.findIndex((record) => record.id === id);
+      this.dataOriginal.splice(index, 1);
+      this.getRecordsBypage(this.currentPage);
+      this.quantityRecords = this.dataOriginal.length;
+    });
   }
 }

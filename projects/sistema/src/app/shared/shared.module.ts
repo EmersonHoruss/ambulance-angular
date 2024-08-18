@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { UtilsService } from './services/utils.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContainerComponent,
     TableComponent,
     PaginatorComponent,
+    ConfirmComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   exports: [
     TitleComponent,
@@ -45,6 +49,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     ReactiveFormsModule,
     MatTableModule,
+    ConfirmComponent,
   ],
   providers: [UtilsService],
 })
