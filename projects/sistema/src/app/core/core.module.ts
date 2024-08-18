@@ -12,9 +12,17 @@ import { MenuComponent } from './views/components/menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { PageLoginComponent } from './views/pages/page-login/page-login.component';
 import { LoginComponent } from './views/components/login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent, MenuComponent, PageLoginComponent, LoginComponent],
+  declarations: [
+    HeaderComponent,
+    SidebarComponent,
+    MenuComponent,
+    LoginComponent,
+    PageLoginComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -23,6 +31,8 @@ import { LoginComponent } from './views/components/login/login.component';
     MatButtonModule,
     MatMenuModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   exports: [HeaderComponent, SidebarComponent, MenuComponent],
 })
