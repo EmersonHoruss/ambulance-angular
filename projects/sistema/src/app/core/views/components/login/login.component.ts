@@ -14,7 +14,7 @@ export class LoginComponent {
   ) {}
 
   login() {
-    this.router.navigate(['medic']);
+    this.router.navigate(['user']);
   }
 
   ngOnDestroy(): void {

@@ -19,6 +19,6 @@ export class PaginatorService extends MatPaginatorIntl {
     length = Math.max(length);
     const start = page * pageSize;
     const end = start < length ? Math.min(start, length) : start + pageSize;
-    return `${start + 1} - ${end} of $ ${length}`;
+    return `${start + 1} - ${end} of ${length}`;
   };
 }

@@ -11,7 +11,11 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Actions</th>
         <td mat-cell *matCellDef="let row">
-          <button mat-icon-button color="primary">
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="showModalWindow(row)"
+          >
             <mat-icon>edit</mat-icon>
           </button>
 
@@ -22,5 +26,9 @@
       </ng-container>
     </amb-table>
   </div>
-  <amb-paginator></amb-paginator>
+  <amb-paginator
+    [length]="quantityRecords"
+    [pageSize]="pageSize"
+    (onChangePage)="getRecordsBypage($event)"
+  ></amb-paginator>
 </amb-container>

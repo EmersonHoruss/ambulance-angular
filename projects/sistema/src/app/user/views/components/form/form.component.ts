@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'amb-form',
@@ -10,14 +10,20 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class FormComponent {
   group: FormGroup;
+  title: string;
 
-  constructor(private readonly dialogRefence: MatDialogRef<FormComponent>) {
+  constructor(
+    private readonly dialogRefence: MatDialogRef<FormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.title = `${this.data ? 'Edit' : 'Add'} User`;
     this.group = new FormGroup({
-      name: new FormControl('', [
+      id: new FormControl(this.data?.id ?? ''),
+      name: new FormControl(this.data?.name ?? '', [
         Validators.required,
         Validators.pattern(/[a-zA-Z]+/),
       ]),
-      surname: new FormControl('', [Validators.required]),
+      surname: new FormControl(this.data?.surname ?? '', [Validators.required]),
     });
   }
 
