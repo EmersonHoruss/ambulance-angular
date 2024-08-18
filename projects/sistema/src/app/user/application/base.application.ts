@@ -24,4 +24,8 @@ export class BaseApplication<
   delete(id: number) {
     this.repository.delete(id);
   }
+
+  page(page: number) {
+    this.repository.page(page);
+  }
 }

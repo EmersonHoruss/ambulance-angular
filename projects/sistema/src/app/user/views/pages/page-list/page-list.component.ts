@@ -3,6 +3,7 @@ import { MetaColumn } from '../../../../shared/interfaces/metacolumn.interface';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormComponent } from '../../components/form/form.component';
 import { UtilsService } from '../../../../shared/services/utils.service';
+import { UserApplication } from '../../../application/user.application';
 
 @Component({
   selector: 'amb-page-list',
@@ -73,11 +74,15 @@ export class PageListComponent {
   currentPage = 0;
   quantityRecords = this.dataOriginal.length;
 
-  constructor(private readonly utilsService: UtilsService) {
+  constructor(
+    private readonly utilsService: UtilsService,
+    private readonly userApplication: UserApplication
+  ) {
     this.getRecordsBypage(this.currentPage);
   }
 
   getRecordsBypage(page: number) {
+    this.userApplication.page(page);
     this.currentPage = page;
     this.dataSource = [
       ...this.dataOriginal.slice(

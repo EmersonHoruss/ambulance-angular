@@ -8,4 +8,6 @@ export interface BaseRepository<Entity> {
   update(id: number, entity: Entity): any;
 
   delete(id: number): any;
+
+  page(page: number): any;
 }

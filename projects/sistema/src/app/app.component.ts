@@ -8,6 +8,7 @@ import { LayoutService } from './config/injections/layout/services/layout.servic
 import { ILayout } from './config/injections/layout/interfaces/layout.interface';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'amb-root',
