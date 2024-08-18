@@ -1,5 +1,15 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  Input,
+  OnInit,
+  QueryList,
+  SimpleChanges,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { MetaColumn } from '../../interfaces/metacolumn.interface';
+import { MatColumnDef, MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'amb-table',
@@ -9,8 +19,11 @@ import { MetaColumn } from '../../interfaces/metacolumn.interface';
 export class TableComponent implements OnInit {
   listFields: string[] = [];
   @Input() metaColumns: MetaColumn[] = [];
-  @Input() dataSource : any[] = [];
+  @Input() dataSource: any[] = [];
 
+  @ContentChildren(MatColumnDef, { descendants: true })
+  columnsDef!: QueryList<MatColumnDef>;
+  @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
   constructor() {}
 
   ngOnInit(): void {}
@@ -19,6 +32,15 @@ export class TableComponent implements OnInit {
     if (changes['metaColumns']) {
       this.listFields = this.metaColumns.map((item) => item.field);
     }
+  }
+
+  ngAfterContentInit(): void {
+    if (!this.columnsDef) return;
+
+    this.columnsDef.forEach((columnDef) => {
+      this.listFields.push(columnDef.name);
+      this.table?.addColumnDef(columnDef);
+    });
   }
 
   selectRow(row: any) {}
