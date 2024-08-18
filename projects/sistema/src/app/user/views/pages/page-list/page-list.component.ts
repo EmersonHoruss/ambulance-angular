@@ -77,6 +77,16 @@ export class PageListComponent {
     this.getRecordsBypage(this.currentPage);
   }
 
+  getRecordsBypage(page: number) {
+    this.currentPage = page;
+    this.dataSource = [
+      ...this.dataOriginal.slice(
+        page * this.pageSize,
+        page * this.pageSize + this.pageSize
+      ),
+    ];
+  }
+
   showModalWindow(row: any = null) {
     const dialogRef: MatDialogRef<FormComponent> =
       this.utilsService.showModalWindow(FormComponent, {
@@ -105,13 +115,10 @@ export class PageListComponent {
     });
   }
 
-  getRecordsBypage(page: number) {
-    this.currentPage = page;
-    this.dataSource = [
-      ...this.dataOriginal.slice(
-        page * this.pageSize,
-        page * this.pageSize + this.pageSize
-      ),
-    ];
+  delete(id: number) {
+    const index = this.dataOriginal.findIndex((record) => record.id === id);
+    this.dataOriginal.splice(index, 1);
+    this.getRecordsBypage(this.currentPage);
+    this.quantityRecords = this.dataOriginal.length;
   }
 }
