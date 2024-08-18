@@ -87,13 +87,25 @@ export class PageListComponent {
 
     dialogRef.afterClosed().subscribe((response) => {
       if (!response) return;
-      console.log(response);
+
+      if (response.id) {
+        const record: any = this.dataOriginal.find(
+          (data) => data.id === response.id
+        );
+        record.name = response.name;
+        record.surname = response.surname;
+        this.getRecordsBypage(this.currentPage);
+      } else {
+        response.id = this.dataOriginal.length + 1;
+        this.dataOriginal.push(response);
+      }
+
+      this.getRecordsBypage(this.currentPage);
+      this.quantityRecords = this.dataOriginal.length;
     });
   }
 
   getRecordsBypage(page: number) {
-    console.log(page);
-    console.log(this.pageSize)
     this.currentPage = page;
     this.dataSource = [
       ...this.dataOriginal.slice(
