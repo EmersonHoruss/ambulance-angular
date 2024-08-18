@@ -1,1 +1,44 @@
-<p>form works!</p>
+<mat-toolbar>
+  <h3>Add User</h3>
+  <button mat-icon-button color="primary" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-dialog-content>
+  <form [formGroup]="group">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput placeholder="Jhon" formControlName="name" />
+      <mat-error *ngIf="group.get('name')?.hasError('required')">
+        Required
+      </mat-error>
+      <mat-error *ngIf="group.get('name')?.hasError('pattern')">
+        Just letters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Surname</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Smith"
+        formControlName="surname"
+      />
+      <mat-error>Required</mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+      <button
+        type="button"
+        mat-flat-button
+        color="primary"
+        (click)="save()"
+        [disabled]="group.invalid"
+      >
+        Save
+      </button>
+      <button type="button" mat-button mat-dialog-close>Close</button>
+    </div>
+  </form>
+</mat-dialog-content>

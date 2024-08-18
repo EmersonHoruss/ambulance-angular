@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LayoutService } from './config/injections/layout/services/layout.service';
 import { ILayout } from './config/injections/layout/interfaces/layout.interface';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'amb-root',
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     MatSidenavModule,
     RouterLink,
     MatIconModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -34,6 +36,4 @@ export class AppComponent {
       this.layout = layout;
     });
   }
-
-  
 }

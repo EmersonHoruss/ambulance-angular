@@ -11,6 +11,12 @@ import { TitleComponent } from './components/title/title.component';
 import { ContainerComponent } from './components/container/container.component';
 import { TableComponent } from './components/table/table.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { UtilsService } from './services/utils.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +39,12 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     ContainerComponent,
     TableComponent,
     PaginatorComponent,
+    MatDialogModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
+  providers: [UtilsService],
 })
 export class SharedModule {}
