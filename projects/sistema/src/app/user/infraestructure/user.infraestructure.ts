@@ -4,13 +4,23 @@ import { UserRepository } from '../domain/user.repository';
 
 @Injectable()
 export class UserInfraestructure implements UserRepository {
-  insert(user: User) {}
+  insert(user: User) {
+    throw new Error('Method not implemented.');
+  }
 
-  list() {}
+  list() {
+    throw new Error('Method not implemented.');
+  }
 
-  listOne() {}
+  listOne() {
+    throw new Error('Method not implemented.');
+  }
 
-  update(id: number, user: User) {}
+  update(id: number, user: User) {
+    throw new Error('Method not implemented.');
+  }
 
-  delete(id: number) {}
+  delete(id: number) {
+    throw new Error('Method not implemented.');
+  }
 }
