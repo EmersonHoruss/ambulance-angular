@@ -9,6 +9,7 @@ export class UserFactory {
       email,
       password,
       roles,
+      id: new Date().getTime(),
     };
 
     if (name.trim() === '') throw new Error('name should not be empty');

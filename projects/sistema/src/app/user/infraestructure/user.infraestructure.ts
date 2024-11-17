@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class UserInfraestructure implements UserRepository {
   constructor(private readonly http: HttpClient) {}
+  reports(): void {
+    throw new Error('Method not implemented.');
+  }
 
   insert(user: User) {
     throw new Error('Method not implemented.');
@@ -28,10 +31,10 @@ export class UserInfraestructure implements UserRepository {
   }
 
   page(page: number) {
-    this.http
-      .get(`https://api-cursoangular.cursos-dev.com/users/page/${page}/10`)
-      .subscribe((response) => {
-        console.log(response);
-      });
+    // this.http
+    //   .get(`http://localhost:8080/users?page=${page}`)
+    //   .subscribe((response) => {
+    //     console.log(response);
+    //   });
   }
 }

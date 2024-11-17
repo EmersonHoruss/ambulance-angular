@@ -10,6 +10,8 @@ import { LAYOUT_TOKEN } from './config/injections/layout/tokens/layout.token';
 import { layoutConstant } from './config/injections/layout/constants/layout.constant';
 import { UserApplication } from './user/application/user.application';
 import { UserInfraestructure } from './user/infraestructure/user.infraestructure';
+import { AuthInfraestructure } from './core/infraestructure/auth.infraestructure';
+import { AuthApplication } from './core/application/auth.application';
 
 const angular = [
   provideZoneChangeDetection({ eventCoalescing: true }),
@@ -19,8 +21,8 @@ const angular = [
 ];
 const material = [{ provide: MatPaginatorIntl, useClass: PaginatorService }];
 const layout = [{ provide: LAYOUT_TOKEN, useValue: layoutConstant }];
-const infraestructure = [UserInfraestructure];
-const application = [UserApplication];
+const infraestructure = [UserInfraestructure, AuthInfraestructure];
+const application = [UserApplication, AuthApplication];
 
 export const appConfig: ApplicationConfig = {
   providers: [

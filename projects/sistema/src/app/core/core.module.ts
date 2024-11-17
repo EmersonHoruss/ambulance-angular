@@ -14,26 +14,34 @@ import { PageLoginComponent } from './views/pages/page-login/page-login.componen
 import { LoginComponent } from './views/components/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+
+const declarations = [
+  HeaderComponent,
+  SidebarComponent,
+  MenuComponent,
+  LoginComponent,
+  PageLoginComponent,
+];
+
+const imports = [
+  CommonModule,
+  RouterModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatListModule,
+  MatFormFieldModule,
+  MatInputModule,
+  ReactiveFormsModule,
+];
+
+const exports = [HeaderComponent, SidebarComponent, MenuComponent];
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    SidebarComponent,
-    MenuComponent,
-    LoginComponent,
-    PageLoginComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatListModule,
-    MatFormFieldModule,
-    MatInputModule,
-  ],
-  exports: [HeaderComponent, SidebarComponent, MenuComponent],
+  declarations,
+  imports,
+  exports,
 })
 export class CoreModule {}

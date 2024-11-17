@@ -11,4 +11,13 @@ export class UserApplication extends BaseApplication<User, UserRepository> {
   ) {
     super(userRepository);
   }
+
+  override insert(entity: User): void {
+    alert('executing');
+    this.userRepository.insert(entity);
+  }
+
+  reports() {
+    this.userRepository.reports();
+  }
 }
