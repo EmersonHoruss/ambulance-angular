@@ -6,6 +6,7 @@ import { AuthApplication } from '../../../application/auth.application';
 import { Auth } from '../../../domain/auth';
 import { AuthFactory } from '../../../domain/auth-factory';
 import { ITokens } from '../../../domain/token.interface';
+import { StorageApplication } from '../../../application/storage.application';
 
 @Component({
   selector: 'amb-login',
@@ -18,7 +19,8 @@ export class LoginComponent {
   constructor(
     private readonly router: Router,
     private readonly layoutService: LayoutService,
-    private readonly authApplication: AuthApplication
+    private readonly authApplication: AuthApplication,
+    private readonly storageApplication: StorageApplication
   ) {
     this.group = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -39,6 +41,7 @@ export class LoginComponent {
 
   userAuthenticated(response: ITokens) {
     console.log(response);
+    this.storageApplication.setField('accessToken', response.accessToken);
     this.router.navigate(['user']);
   }
 
