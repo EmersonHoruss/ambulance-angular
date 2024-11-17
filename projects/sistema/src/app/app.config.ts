@@ -12,6 +12,8 @@ import { UserApplication } from './user/application/user.application';
 import { UserInfrastructure } from './user/infrastructure/user.infrastructure';
 import { AuthInfrastructure } from './core/infrastructure/auth.infrastructure';
 import { AuthApplication } from './core/application/auth.application';
+import { StorageInfrastructure } from './core/infrastructure/storage.infrastructure';
+import { StorageApplication } from './core/application/storage.application';
 
 const angular = [
   provideZoneChangeDetection({ eventCoalescing: true }),
@@ -21,8 +23,12 @@ const angular = [
 ];
 const material = [{ provide: MatPaginatorIntl, useClass: PaginatorService }];
 const layout = [{ provide: LAYOUT_TOKEN, useValue: layoutConstant }];
-const infraestructure = [UserInfrastructure, AuthInfrastructure];
-const application = [UserApplication, AuthApplication];
+const infraestructure = [
+  UserInfrastructure,
+  AuthInfrastructure,
+  StorageInfrastructure,
+];
+const application = [UserApplication, AuthApplication, StorageApplication];
 
 export const appConfig: ApplicationConfig = {
   providers: [
