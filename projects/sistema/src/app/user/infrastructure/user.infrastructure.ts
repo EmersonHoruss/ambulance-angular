@@ -4,7 +4,7 @@ import { UserRepository } from '../domain/user.repository';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class UserInfraestructure implements UserRepository {
+export class UserInfrastructure implements UserRepository {
   constructor(private readonly http: HttpClient) {}
   reports(): void {
     throw new Error('Method not implemented.');

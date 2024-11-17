@@ -7,7 +7,7 @@ import { ITokens } from '../domain/token.interface';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class AuthInfraestructure implements AuthRepository {
+export class AuthInfrastructure implements AuthRepository {
   private apiUrl = environment.apiUrl;
 
   constructor(private readonly http: HttpClient) {}
