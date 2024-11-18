@@ -13,4 +13,11 @@ export class PageLoginComponent {
       menuHidden: true,
     });
   }
+
+  ngOnDestroy(): void {
+    this.layoutService.setConfiguration({
+      headerHidden: false,
+      menuHidden: false,
+    });
+  }
 }
