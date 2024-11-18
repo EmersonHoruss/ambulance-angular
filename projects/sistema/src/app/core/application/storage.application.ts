@@ -19,4 +19,8 @@ export class StorageApplication {
   getFieldInToken(field: string): string | string[] | null {
     return this.storage.getFieldInToken(field);
   }
+
+  clear(): void {
+    this.storage.clear();
+  }
 }

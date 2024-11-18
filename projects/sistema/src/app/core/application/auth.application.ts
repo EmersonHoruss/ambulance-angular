@@ -36,4 +36,10 @@ export class AuthApplication {
 
     return this.userLogged || accessToken;
   }
+
+  loggout() {
+    this.userLogged = false;
+    this.storageApplication.clear();
+    this.router.navigate(['/']);
+  }
 }
