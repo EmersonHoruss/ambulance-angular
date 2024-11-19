@@ -1,6 +1,4 @@
-import { BaseRepository } from './base.repository';
+import { BaseRepository } from '../../shared/domain/base.repository';
 import { User } from './user';
 
-export interface UserRepository extends BaseRepository<User> {
-  reports(): void;
-}
+export interface UserRepository extends BaseRepository<User> {}

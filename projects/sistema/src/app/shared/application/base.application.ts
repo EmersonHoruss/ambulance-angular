@@ -5,27 +5,28 @@ export class BaseApplication<
   Repository extends BaseRepository<Entity>
 > {
   constructor(private readonly repository: Repository) {}
+
   insert(entity: Entity) {
-    this.repository.insert(entity);
+    return this.repository.insert(entity);
   }
 
   list() {
-    this.repository.list();
+    return this.repository.list();
   }
 
   listOne(id: number) {
-    this.repository.listOne(id);
+    return this.repository.listOne(id);
   }
 
   update(id: number, entity: Entity) {
-    this.repository.update(id, entity);
+    return this.repository.update(entity);
   }
 
   delete(id: number) {
-    this.repository.delete(id);
+    return this.repository.delete(id);
   }
 
   page(page: number) {
-    this.repository.page(page);
+    return this.repository.page(page);
   }
 }
