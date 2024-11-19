@@ -18,7 +18,7 @@ export class BaseApplication<
     return this.repository.listOne(id);
   }
 
-  update(id: number, entity: Entity) {
+  update(entity: Entity) {
     return this.repository.update(entity);
   }
 

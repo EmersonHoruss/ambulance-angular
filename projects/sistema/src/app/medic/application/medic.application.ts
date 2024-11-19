@@ -1,9 +1,10 @@
-import { Inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BaseApplication } from '../../shared/application/base.application';
 import { Medic } from '../domain/medic';
 import { MedicRepository } from '../domain/medic.repository';
 import { MedicInfrastructure } from '../infrastructure/medic.infrastructure';
 
+@Injectable()
 export class MedicApplication extends BaseApplication<Medic, MedicRepository> {
   constructor(
     @Inject(MedicInfrastructure)
